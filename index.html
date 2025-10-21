@@ -1,9 +1,8 @@
 <html>
 <head>
     <script>
-        const myElement = document.getElementById("demo");
-
         function getLocation() {
+            const myElement = document.getElementById("demo");
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(showPosition);
             } else {
@@ -12,6 +11,7 @@
         }
 
         function showPosition(position) {
+            const myElement = document.getElementById("demo");
             myElement.innerHTML = "Latitude: " + position.coords.latitude +
             "<br>Longitude: " + position.coords.longitude;
         }
