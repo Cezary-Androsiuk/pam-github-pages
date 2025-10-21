@@ -16,11 +16,42 @@
             });
         }
 
+        function getPosition(){
+            console.log("getting position...")
+
+            let gyroscope = new Gyroscope({ frequency: 60 });
+
+            const gX = document.getElementById('gyroscopeX');
+            const gY = document.getElementById('gyroscopeY');
+            const gZ = document.getElementById('gyroscopeZ');
+            
+            console.log(gyroscope)
+
+            gyroscope.addEventListener("reading", (e) => {
+                console.log("new reading: ", gyroscope)
+                gX.innerHTML = gyroscope.x;
+                gY.innerHTML = gyroscope.y;
+                gZ.innerHTML = gyroscope.z;
+            });
+            gyroscope.start();
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            
+        })
+
     </script>
 </head>
 <body>
     <h1> commit 4 </h1>
-    <button onclick="getLocation()">Try It</button>
+    <button onclick="getLocation()">Get Location</button>
     <div id="location"></div>
+
+    <button onclick="getPosition()">Get Position</button>
+    <div>
+        <span id="gyroscopeX"></span>
+        <span id="gyroscopeY"></span>
+        <span id="gyroscopeZ"></span>
+    </div>
 </body>
 </html>
