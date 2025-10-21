@@ -24,9 +24,9 @@
             const gX = document.getElementById('gyroscopeX');
             const gY = document.getElementById('gyroscopeY');
             const gZ = document.getElementById('gyroscopeZ');
-            const alpha = document.getElementById('alpha');
-            const beta = document.getElementById('beta');
-            const gamma = document.getElementById('gamma');
+            const a = document.getElementById('alpha');
+            const b = document.getElementById('beta');
+            const c = document.getElementById('gamma');
             
             console.log(gyroscope)
 
@@ -34,9 +34,9 @@
                 gX.innerHTML = "X: " + gyroscope.x.toFixed(2);
                 gY.innerHTML = "Y: " + gyroscope.y.toFixed(2);
                 gZ.innerHTML = "Z: " + gyroscope.z.toFixed(2);
-                alpha.innerHTML = "a: " + gyroscope.alpha.toFixed(2);
-                beta.innerHTML = "b: " + gyroscope.beta.toFixed(2);
-                gamma.innerHTML = "c: " + gyroscope.gamma.toFixed(2);
+                a.innerHTML = "a: " + gyroscope.alpha.toFixed(2);
+                b.innerHTML = "b: " + gyroscope.beta.toFixed(2);
+                c.innerHTML = "c: " + gyroscope.gamma.toFixed(2);
             });
             gyroscope.start();
         }
@@ -56,7 +56,7 @@
     </script>
 </head>
 <body>
-    <h1> commit 11 </h1>
+    <h1> commit 12 </h1>
     <button onclick="getLocation()">Get Location</button>
     <div id="location"></div>
 
