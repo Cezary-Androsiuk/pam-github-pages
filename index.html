@@ -26,7 +26,7 @@
             const gZ = document.getElementById('gyroscopeZ');
             const a = document.getElementById('alpha');
             const b = document.getElementById('beta');
-            const c = document.getElementById('gamma');
+            const g = document.getElementById('gamma');
             
             console.log(gyroscope)
 
@@ -36,7 +36,7 @@
                 gZ.innerHTML = "Z: " + gyroscope.z.toFixed(2);
                 a.innerHTML = "a: " + gyroscope.alpha.toFixed(2);
                 b.innerHTML = "b: " + gyroscope.beta.toFixed(2);
-                c.innerHTML = "c: " + gyroscope.gamma.toFixed(2);
+                g.innerHTML = "g: " + gyroscope.gamma.toFixed(2);
             });
             gyroscope.start();
         }
@@ -81,20 +81,20 @@
     </script>
 </head>
 <body>
-    <h1> commit 13 </h1>
+    <h1> commit 14 </h1>
     <button onclick="getLocation()">Get Location</button>
     <div id="location"></div>
 
     <br><br>
     <button onclick="getAcceleration()">Get Acceleration and Rotation</button>
     <div>
-        <span id="gyroscopeX"></span> <br>
-        <span id="gyroscopeY"></span> <br>
-        <span id="gyroscopeZ"></span> <br>
+        <span id="gyroscopeX">X</span> <br>
+        <span id="gyroscopeY">Y</span> <br>
+        <span id="gyroscopeZ">Z</span> <br>
 
-        <span id="alpha"></span> <br>
-        <span id="beta"></span> <br>
-        <span id="gamma"></span> <br>
+        <span id="alpha">a</span> <br>
+        <span id="beta">b</span> <br>
+        <span id="gamma">c</span> <br>
     </div>
 
     <br><br>
