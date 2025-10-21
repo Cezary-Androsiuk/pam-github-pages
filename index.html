@@ -34,11 +34,15 @@
                 gX.innerHTML = "X: " + gyroscope.x.toFixed(2);
                 gY.innerHTML = "Y: " + gyroscope.y.toFixed(2);
                 gZ.innerHTML = "Z: " + gyroscope.z.toFixed(2);
-                alpha.innerHTML = "α: " + gyroscope.alpha.toFixed(2);
-                beta.innerHTML = "β: " + gyroscope.beta.toFixed(2);
-                gamma.innerHTML = "γ: " + gyroscope.gamma.toFixed(2);
+                alpha.innerHTML = "a: " + gyroscope.alpha.toFixed(2);
+                beta.innerHTML = "b: " + gyroscope.beta.toFixed(2);
+                gamma.innerHTML = "c: " + gyroscope.gamma.toFixed(2);
             });
             gyroscope.start();
+        }
+
+        function vibrate(){
+
         }
 
         document.addEventListener('DOMContentLoaded', () => {
@@ -48,7 +52,7 @@
     </script>
 </head>
 <body>
-    <h1> commit 8 </h1>
+    <h1> commit 9 </h1>
     <button onclick="getLocation()">Get Location</button>
     <div id="location"></div>
 
@@ -63,5 +67,9 @@
         <span id="beta"></span> <br>
         <span id="gamma"></span> <br>
     </div>
+
+    <br><br>
+    <button onclick="vibrate()"></button>
+
 </body>
 </html>
