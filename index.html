@@ -2,25 +2,25 @@
 <head>
     <script>
         function getLocation() {
-            const myElement = document.getElementById("demo");
+            const locationNode = document.getElementById("location");
             if (!navigator.geolocation) {
-                myElement.innerHTML = "Geolocation is not supported by this browser.";
+                locationNode.innerHTML = "Geolocation is not supported by this browser.";
                 return;
             }
-            
+
             navigator.geolocation.getCurrentPosition((position) => {
-                myElement.innerHTML = "Latitude: " + position.coords.latitude +
-                "<br>Longitude: " + position.coords.longitude;
+                locationNode.innerHTML = 
+                    "Latitude: " + position.coords.latitude +
+                    "<br>" + 
+                    "Longitude: " + position.coords.longitude;
             });
         }
 
     </script>
 </head>
 <body>
-    <h1> commit 3 </h1>
+    <h1> commit 4 </h1>
     <button onclick="getLocation()">Try It</button>
-    <div id="demo">
-
-    </div>
+    <div id="location"></div>
 </body>
 </html>
