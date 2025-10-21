@@ -16,14 +16,17 @@
             });
         }
 
-        function getPosition(){
-            console.log("getting position...")
+        function getAcceleration(){
+            console.log("getting Acceleration...")
 
             let gyroscope = new Gyroscope({ frequency: 60 });
 
             const gX = document.getElementById('gyroscopeX');
             const gY = document.getElementById('gyroscopeY');
             const gZ = document.getElementById('gyroscopeZ');
+            const alpha = document.getElementById('alpha');
+            const beta = document.getElementById('beta');
+            const gamma = document.getElementById('gamma');
             
             console.log(gyroscope)
 
@@ -31,6 +34,9 @@
                 gX.innerHTML = "X: " + gyroscope.x.toFixed(2);
                 gY.innerHTML = "Y: " + gyroscope.y.toFixed(2);
                 gZ.innerHTML = "Z: " + gyroscope.z.toFixed(2);
+                alpha.innerHTML = "α: " + gyroscope.alpha.toFixed(2);
+                beta.innerHTML = "β: " + gyroscope.beta.toFixed(2);
+                gamma.innerHTML = "γ: " + gyroscope.gamma.toFixed(2);
             });
             gyroscope.start();
         }
@@ -42,16 +48,20 @@
     </script>
 </head>
 <body>
-    <h1> commit 7 </h1>
+    <h1> commit 8 </h1>
     <button onclick="getLocation()">Get Location</button>
     <div id="location"></div>
 
     <br><br>
-    <button onclick="getPosition()">Get Position</button>
+    <button onclick="getAcceleration()">Get Acceleration</button>
     <div>
         <span id="gyroscopeX"></span> <br>
         <span id="gyroscopeY"></span> <br>
         <span id="gyroscopeZ"></span> <br>
+
+        <span id="alpha"></span> <br>
+        <span id="beta"></span> <br>
+        <span id="gamma"></span> <br>
     </div>
 </body>
 </html>
