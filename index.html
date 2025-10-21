@@ -16,9 +16,7 @@
             });
         }
 
-        function getAcceleration(){
-            console.log("getting Acceleration...")
-
+        function getAccelerationAndRotation(){
             let gyroscope = new Gyroscope({ frequency: 60 });
 
             const gX = document.getElementById('gyroscopeX');
@@ -49,7 +47,7 @@
             }
         }
 
-        async function fullscreenAndOrientation(){
+        async function getFullscreenAndOrientation(){
             const elem = document.documentElement; // Cała strona (<html>)
 
             if (!elem.requestFullscreen) {
@@ -81,12 +79,12 @@
     </script>
 </head>
 <body>
-    <h1> commit 14 </h1>
+    <h1> commit 15 </h1>
     <button onclick="getLocation()">Get Location</button>
     <div id="location"></div>
 
     <br><br>
-    <button onclick="getAcceleration()">Get Acceleration and Rotation</button>
+    <button onclick="getAccelerationAndRotation()">Get Acceleration and Rotation</button>
     <div>
         <span id="gyroscopeX">X</span> <br>
         <span id="gyroscopeY">Y</span> <br>
@@ -101,7 +99,7 @@
     <button onclick="vibrate()">Vibrate</button>
     <div id="vibrateLabel"></div>
 
-    <button onclick="fullscreenAndOrientation()"> Fullscreen and Orientation </button>
+    <button onclick="getFullscreenAndOrientation()"> Fullscreen and Orientation </button>
 
 </body>
 </html>
