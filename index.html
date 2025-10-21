@@ -3,23 +3,21 @@
     <script>
         function getLocation() {
             const myElement = document.getElementById("demo");
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(showPosition);
-            } else {
+            if (!navigator.geolocation) {
                 myElement.innerHTML = "Geolocation is not supported by this browser.";
+                return;
             }
+            
+            navigator.geolocation.getCurrentPosition((position) => {
+                myElement.innerHTML = "Latitude: " + position.coords.latitude +
+                "<br>Longitude: " + position.coords.longitude;
+            });
         }
 
-        function showPosition(position) {
-            const myElement = document.getElementById("demo");
-            myElement.innerHTML = "Latitude: " + position.coords.latitude +
-            "<br>Longitude: " + position.coords.longitude;
-        }
-        showPosition()
     </script>
 </head>
 <body>
-    <h1> commit 2 </h1>
+    <h1> commit 3 </h1>
     <button onclick="getLocation()">Try It</button>
     <div id="demo">
 
