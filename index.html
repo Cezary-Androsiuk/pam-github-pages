@@ -49,6 +49,31 @@
             }
         }
 
+        async function fullscreenAndOrientation(){
+            const elem = document.documentElement; // Cała strona (<html>)
+
+            if (!elem.requestFullscreen) {
+                alert("Twoja przeglądarka nie wspiera trybu Fullscreen API.");
+                return;
+            }
+
+            try {
+                await elem.requestFullscreen();
+                console.log('Wejście w tryb Fullscreen udane.');
+
+                if ('orientation' in screen && typeof screen.orientation.lock === 'function') {
+                    await screen.orientation.lock('landscape');
+                    console.log('Orientacja zablokowana na landscape.');
+                } else {
+                    console.warn('Screen Orientation API (lock) nie jest wspierane.');
+                }
+
+            } catch (err) {
+                // Obsługa błędów (np. użytkownik nie pozwolił)
+                console.error('Nie udało się wejść w tryb Fullscreen lub zmienić orientacji:', err.message);
+            }
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             
         })
@@ -56,7 +81,7 @@
     </script>
 </head>
 <body>
-    <h1> commit 12 </h1>
+    <h1> commit 13 </h1>
     <button onclick="getLocation()">Get Location</button>
     <div id="location"></div>
 
@@ -75,6 +100,8 @@
     <br><br>
     <button onclick="vibrate()">Vibrate</button>
     <div id="vibrateLabel"></div>
+
+    <button onclick="fullscreenAndOrientation()"> Fullscreen and Orientation </button>
 
 </body>
 </html>
