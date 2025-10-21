@@ -28,9 +28,9 @@
             console.log(gyroscope)
 
             gyroscope.addEventListener("reading", (e) => {
-                gX.innerHTML = gyroscope.x.toFixed(2);
-                gY.innerHTML = gyroscope.y.toFixed(2);
-                gZ.innerHTML = gyroscope.z.toFixed(2);
+                gX.innerHTML = "X: " + gyroscope.x.toFixed(2);
+                gY.innerHTML = "Y: " + gyroscope.y.toFixed(2);
+                gZ.innerHTML = "Z: " + gyroscope.z.toFixed(2);
             });
             gyroscope.start();
         }
@@ -42,7 +42,7 @@
     </script>
 </head>
 <body>
-    <h1> commit 6 </h1>
+    <h1> commit 7 </h1>
     <button onclick="getLocation()">Get Location</button>
     <div id="location"></div>
 
